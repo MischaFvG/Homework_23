@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Create table if not exists -->
+        <!--Options:-->
+        <!--validate: validate the schema, makes no changes to the database.-->
+        <!--update: update the schema.-->
+        <!--create: creates the schema, destroying previous data.-->
+        <!--create-drop: drop the schema when the SessionFactory is closed explicitly, typically when the application is stopped.        -->
+        <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MariaDBDialect</property>
+
+        <property name="hibernate.connection.url">jdbc:mariadb://127.0.0.1:3307/student</property>
+
+        <property name="hibernate.connection.username">root</property>
+
+        <property name="hibernate.connection.password">1234</property>
+
+        <mapping class="com.cat.model.Student"/>
+
+    </session-factory>
+</hibernate-configuration>
